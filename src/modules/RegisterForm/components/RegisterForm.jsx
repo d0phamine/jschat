@@ -6,6 +6,7 @@ import {Button, Block} from "components";
 
 class RegisterForm extends Component {
     render(){
+        const  success  = false;
         return(
             <div>
                 <div className="auth__top">
@@ -13,13 +14,14 @@ class RegisterForm extends Component {
                     <p>Для входа в чат вам нужно зарегистрироваться</p>
                 </div>
                 <Block>
-                <Form onSubmit={this.handleSubmit} className="login-form">
+                
+                { !success ? <Form onSubmit={this.handleSubmit} className="login-form">
                     <Form.Item validateStatus="success" hasFeedback>
                     
                         <Input
                         prefix={<Icon type="emal" style={{ color: 'rgba(0,0,0,.25)' }} />}
                         placeholder="E-Mail" size="large" 
-                        />,
+                        />
                     
                     </Form.Item>
                     <Form.Item>
@@ -29,7 +31,7 @@ class RegisterForm extends Component {
                         type="password"
                         placeholder="Ваше имя"
                         size="large"
-                        />,
+                        />
                     
                     </Form.Item>
                     <Form.Item>
@@ -39,7 +41,7 @@ class RegisterForm extends Component {
                         type="password"
                         placeholder="Пароль"
                         size="large"
-                        />,
+                        />
                     
                     </Form.Item>
                     <Form.Item>
@@ -49,7 +51,7 @@ class RegisterForm extends Component {
                         type="password"
                         placeholder="Повторите Пароль"
                         size="large"
-                        />,
+                        />
                     
                     </Form.Item>
                     <Form.Item>
@@ -58,7 +60,12 @@ class RegisterForm extends Component {
                     </Button>
                     </Form.Item>
                     <Link className="auth__register-link" to="register">Войти в аккаунт </Link>
-                </Form>
+                </Form> : 
+                    <div className="auth__success-block">
+                        <div><Icon  type="info-circle" theme="twoTone" /></div>
+                        <h2>Подтвердите свой аккаунт</h2>
+                        <p>На Вашу почту отправлено письмо с ссылкой на подтверждение аккаунта.</p>
+                    </div>}
                 </Block>
             </div>
         )

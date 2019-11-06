@@ -19,7 +19,7 @@ class LoginForm extends Component {
                         <Input
                         prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                         placeholder="Username" size="large" 
-                        />,
+                        />
                     
                     </Form.Item>
                     <Form.Item>
@@ -29,7 +29,7 @@ class LoginForm extends Component {
                         type="password"
                         placeholder="Password"
                         size="large"
-                        />,
+                        />
                     
                     </Form.Item>
                     <Form.Item>
