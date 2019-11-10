@@ -59,7 +59,7 @@ class RegisterForm extends Component {
                         Зарегистрироваться
                     </Button>
                     </Form.Item>
-                    <Link className="auth__register-link" to="register">Войти в аккаунт </Link>
+                    <Link className="auth__register-link" to="login">Войти в аккаунт </Link>
                 </Form> : 
                     <div className="auth__success-block">
                         <div><Icon  type="info-circle" theme="twoTone" /></div>
