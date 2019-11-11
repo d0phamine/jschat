@@ -18,6 +18,7 @@ const Home = () => (
         text="ну че дарова ебать" 
         date="Sun Nov 10 2019 21:55:32 "
         IsMe={true}
+        IsReaded={true}
         />
     </section>
 );

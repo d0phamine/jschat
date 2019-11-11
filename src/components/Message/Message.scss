@@ -2,6 +2,7 @@
 
 
 .message{
+    $self: &;
     display: flex;
     max-width: 440px;
     margin-bottom: 15px;
@@ -36,6 +37,37 @@
     &__text {
         color: #fff;
         line-height: 20px;
+    }
+
+    &__isme {
+        display: flex;
+        flex-direction: row-reverse;
+
+        #{$self}__content {
+            margin-bottom: 15px;
+            flex-direction: row-reverse;
+        }
+
+        #{$self}__avatar {
+            img {
+                margin-right: 0;
+                margin-left: 13px;
+            }
+        }
+
+        #{$self}__info {
+            text-align: right;
+        }
+
+        #{$self}__bubble {
+            background: #FFFFFF;
+            border: 1px solid #ececec;
+            box-shadow: 0px 4px 4px  rgba(0, 0, 0, 0.0220444);
+            border-radius: 12px 12px 0px 12px;
+            #{$self}__text{
+                color: $black;
+            }
+        }
     }
 
     
