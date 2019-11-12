@@ -7,6 +7,13 @@
     max-width: 440px;
     margin-bottom: 15px;
 
+    &__content {
+        display: flex;
+        max-width: 440px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
     &__avatar {
         display: flex;
         flex-direction: column-reverse;
@@ -37,6 +44,32 @@
     &__text {
         color: #fff;
         line-height: 20px;
+    }
+
+    
+
+    &__attachments{
+        display: flex;
+        margin-bottom: 5px;
+        &-item {
+            margin-right: 5px;
+            cursor: pointer;
+            img {
+                width: 45px;
+                height: 45px;
+                border-radius: 8px;
+            }
+        }
+    }
+
+    &__icon-readed {
+        position: absolute;
+        bottom: 22px;
+        left: -25px;
+
+        &__no {
+            left: -20px;
+        }
     }
 
     &__isme {
