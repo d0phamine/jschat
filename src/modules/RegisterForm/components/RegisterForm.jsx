@@ -14,6 +14,8 @@ const RegisterForm = props => {
         handleChange,
         handleBlur,
         handleSubmit,
+        isValid,
+        isSubmitting
       } = props;
     return(
         <div>
@@ -28,6 +30,7 @@ const RegisterForm = props => {
                     validateStatus={
                         !touched.email ? '' : errors.email ? 'error':'success' 
                     } 
+                    help={ !touched.email ? '' : errors.email }
                     hasFeedback>
                 
                     <Input
@@ -54,6 +57,7 @@ const RegisterForm = props => {
                     validateStatus={
                         !touched.password ? '' : errors.password ? 'error':'success' 
                     } 
+                    help={ !touched.password ? '' : errors.password }
                     hasFeedback
                 >
                 
@@ -80,9 +84,10 @@ const RegisterForm = props => {
                 
                 </Form.Item>
                 <Form.Item>
-                <Button onClick={handleSubmit} type="primary" size="large">
-                    Зарегистрироваться
-                </Button>
+                    {isSubmitting && !isValid && <span>Error</span>}
+                    <Button onClick={handleSubmit} type="primary" size="large">
+                        Зарегистрироваться
+                    </Button>
                 </Form.Item>
                 <Link className="auth__register-link" to="login">Войти в аккаунт </Link>
             </Form> : 
